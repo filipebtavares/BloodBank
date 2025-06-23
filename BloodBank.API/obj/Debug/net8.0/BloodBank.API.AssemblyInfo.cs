@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3c4174f75c62ac528eb74cc4d548ad8b8d42ebc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29248167f7a05df7acf5b55480ef4402f4b675c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
