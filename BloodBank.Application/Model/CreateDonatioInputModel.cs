@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BloodBank.Core.Enums
+namespace BloodBank.Application.Model
 {
-    public enum DonationsStatus
+    internal class CreateDonatioInputModel
     {
-        Initial = 0,
-        Finished= 1
+        public int QuantityML { get;   set; }
     }
 }

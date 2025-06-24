@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BloodBank.Core.Enums
+namespace BloodBank.Application.Service
 {
-    public enum DonationsStatus
+    internal class BloodStockService
     {
-        Initial = 0,
-        Finished= 1
     }
 }

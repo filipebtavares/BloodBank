@@ -1,6 +1,34 @@
-﻿namespace BloodBank.API.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace BloodBank.API.Controllers
 {
-    public class DonationController
+    [ApiController]
+    [Route("api/donation")]
+    public class DonationController: ControllerBase
     {
+
+        [HttpGet]
+        public async Task<IActionResult> GetDonatios()
+        {
+
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDonationsById(int id)
+        {
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostDonations()
+        {
+
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDonatios(int id)
+        {
+
+        }
     }
 }
