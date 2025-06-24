@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BloodBank.Application.Service
 {
-    internal class IDonorService
+    public interface IDonorService
     {
+
     }
 }

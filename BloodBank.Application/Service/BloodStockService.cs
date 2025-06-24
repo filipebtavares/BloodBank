@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBank.Application.Service
 {
-    internal class BloodStockService
+    public class BloodStockService
     {
     }
 }
