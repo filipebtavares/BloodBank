@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vdCe93JACmI=",
+  "dgSpecHash": "xcmGH9Bp8lo=",
   "success": true,
   "projectFilePath": "C:\\Projetos\\BloodBank\\BloodBank.Application\\BloodBank.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Filipe\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
