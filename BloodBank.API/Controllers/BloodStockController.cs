@@ -19,13 +19,13 @@ namespace BloodBank.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBloodBank(int id)
+        public async Task<IActionResult> UpdateBloodStock(int id)
         {
 
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletedBloodOfBank(int id)
+        public async Task<IActionResult> DeletedBloodStock(int id)
         {
 
         }

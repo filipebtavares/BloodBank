@@ -13,8 +13,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
-    <PackageReference Include="RestSharp" Version="112.1.1-alpha.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BloodBank.Application\BloodBank.Application.csproj" />
+    <ProjectReference Include="..\BloodBank.infrastructure\BloodBank.infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

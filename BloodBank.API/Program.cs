@@ -1,4 +1,8 @@
 using BloodBank.API.Middlewares.Exception;
+using BloodBank.Application.Service;
+using BloodBank.infrastructure.ExternalService.ViaCep;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddExceptionHandler<ApiExceptionHandlers>();
+builder.Services.AddProblemDetails();
+builder.Services.AddScoped<ICepService, CepService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

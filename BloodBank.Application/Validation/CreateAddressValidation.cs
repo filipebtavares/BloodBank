@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BloodBank.Application.Service
+namespace BloodBank.Application.Validation
 {
-    public class DonorService
+    public class CreateAddressValidation
     {
     }
 }

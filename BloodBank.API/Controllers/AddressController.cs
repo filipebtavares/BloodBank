@@ -13,7 +13,7 @@ namespace BloodBank.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAddressById(int id)
+        public async Task<IActionResult> GetAddressByCep(string cep)
         {
 
         }
@@ -26,12 +26,6 @@ namespace BloodBank.API.Controllers
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAddress(int id)
-        {
-
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAddress(int id)
         {
 
         }

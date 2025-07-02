@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBank.Application.Model
 {
-    internal class DonatioItemViewModel
+    public class DonatioItemViewModel
     {
     }
 }

@@ -20,7 +20,7 @@ namespace BloodBank.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostDonations()
+        public async Task<IActionResult> PostDonation()
         {
 
         }

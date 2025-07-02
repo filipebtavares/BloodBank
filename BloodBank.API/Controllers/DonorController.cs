@@ -8,7 +8,7 @@ namespace BloodBank.API.Controllers
     {
 
         [HttpGet]
-        public async Task<IActionResult> GetDonors()
+        public async Task<IActionResult> GetDonors(string seaarch)
         {
 
         }

@@ -9,6 +9,7 @@ namespace BloodBank.Core.Enums
     public enum DonationsStatus
     {
         Initial = 0,
-        Finished= 1
+        Finished = 1,
+        Deleted = 2
     }
 }

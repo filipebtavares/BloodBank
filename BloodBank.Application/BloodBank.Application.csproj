@@ -11,12 +11,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Queries\" />
+    <Folder Include="Queries\GetDonorById\" />
+    <Folder Include="Queries\GetAddress\" />
+    <Folder Include="Queries\GetDonations\" />
+    <Folder Include="Queries\GetDonationsById\" />
+    <Folder Include="Queries\GetBloodStockById\" />
+    <Folder Include="Queries\ConsultCepQuery\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.6" />
   </ItemGroup>
 
 </Project>

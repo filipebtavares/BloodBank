@@ -7,30 +7,37 @@ using BloodBank.Core.Enums;
 
 namespace BloodBank.Core.Entities
 {
-    public  class Donations
+    public  class Donation
     {
-        public int DonorId { get; private set; }
+        public int IdDonor { get; private set; }
         public int Id { get; private set; }
         public DateTime DonorDate { get; private set; }
         public DateTime DonorFinishDate { get; private set; }
-        public int QuantityML { get; private set; }
+        public int QuantityMl { get; private set; }
         public Donor Donor { get; private set; }
+        public List<BloodStock> BloodStocks { get; private set; }
         public DonationsStatus Status { get; private set; }
+        public bool  IsDeleted { get; private set; }
 
-        public Donations()
+        public Donation(int quantityMl)
         {
+            QuantityMl = quantityMl;
+            IsDeleted = false;
         }
 
-        public Donations(int donorId, int id, DateTime donorDate, int quantityML, 
-            Donor donor, DonationsStatus status, DateTime donorFinishDate)
+        public Donation(int idDonor, int id, DateTime donorDate, int quantityMl, 
+             DonationsStatus status, DateTime donorFinishDate, Donor donor)
         {
-            DonorId = donorId;
+            IdDonor = IdDonor;
             Id = id;
             DonorDate = donorDate;
-            QuantityML = quantityML;
-            Donor = donor;
+            QuantityMl = quantityMl;
             Status = DonationsStatus.Initial;
             DonorFinishDate = donorFinishDate;
+            Donor = donor;
+
+            BloodStocks = [];
+           
         }
 
         public void InitialDonation()
@@ -49,6 +56,11 @@ namespace BloodBank.Core.Entities
                 Status = DonationsStatus.Finished;
                 DonorFinishDate = DateTime.Now;
             }
+        }
+
+        public void SetAsDeleted()
+        {
+            Status = DonationsStatus.Deleted;
         }
     }
 }
