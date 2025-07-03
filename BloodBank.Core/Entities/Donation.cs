@@ -11,11 +11,13 @@ namespace BloodBank.Core.Entities
     {
         public int IdDonor { get; private set; }
         public int Id { get; private set; }
-        public DateTime DonorDate { get; private set; }
-        public DateTime DonorFinishDate { get; private set; }
+        public DateTime DonationDate { get; private set; }
+        public DateTime DonationFinishDate { get; private set; }
+        public DateTime  DonationsDeleteDate { get; private set; }
         public int QuantityMl { get; private set; }
         public Donor Donor { get; private set; }
-        public List<BloodStock> BloodStocks { get; private set; }
+        public BloodStock BloodStock { get; private set; }
+        public int IdBloodStock { get; private set; }
         public DonationsStatus Status { get; private set; }
         public bool  IsDeleted { get; private set; }
 
@@ -26,35 +28,36 @@ namespace BloodBank.Core.Entities
         }
 
         public Donation(int idDonor, int id, DateTime donorDate, int quantityMl, 
-             DonationsStatus status, DateTime donorFinishDate, Donor donor)
+             DonationsStatus status, DateTime donorFinishDate, Donor donor, DateTime donationDeleteDate, int idBloodStock)
         {
             IdDonor = IdDonor;
             Id = id;
-            DonorDate = donorDate;
+            DonationDate = donorDate;
             QuantityMl = quantityMl;
             Status = DonationsStatus.Initial;
-            DonorFinishDate = donorFinishDate;
+            DonationFinishDate = donorFinishDate;
             Donor = donor;
-
-            BloodStocks = [];
+            DonationsDeleteDate = donationDeleteDate;
+            IdBloodStock = idBloodStock;
            
         }
 
-        public void InitialDonation()
+
+        public void DonationEstate()
         {
             if (Status == DonationsStatus.Initial)
             {
                 Status = DonationsStatus.Initial;
-                DonorDate = DateTime.Now;
-            }
-        }
-
-        public void FinishDonation()
-        {
-            if (Status == DonationsStatus.Finished)
+                DonationDate = DateTime.Now;
+            }else if(Status == DonationsStatus.Finished)
             {
                 Status = DonationsStatus.Finished;
-                DonorFinishDate = DateTime.Now;
+                DonationFinishDate = DateTime.Now;
+            }
+            else
+            {
+                Status = DonationsStatus.Deleted;
+                DonationsDeleteDate = DateTime.Now;
             }
         }
 

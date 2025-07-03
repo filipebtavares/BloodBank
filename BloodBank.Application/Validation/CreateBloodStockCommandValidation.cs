@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BloodBank.Application.Model
+namespace BloodBank.Application.Validation
 {
-    public class DonatioViewModel
+    public class CreateBloodStockCommandValidation
     {
     }
 }

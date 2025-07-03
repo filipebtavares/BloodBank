@@ -11,14 +11,13 @@ namespace BloodBank.Application.Commands.InsertAddress
 {
     public class CreateAddressCommand : IRequest<ResultViewModel<int>>
     {
-        public string PublicPlace { get;set; }
-        public string City { get;set; }
-        public string State { get;set; }
-        public string Cep { get;set; }
+        public string Cep { get; set; }
+        public int IdDonor { get; set; }
 
-        public Address ToEntity()
-            => new(PublicPlace, City, Cep, State);
-
-
+        public CreateAddressCommand(string cep, int idDonor)
+        {
+            Cep = cep;
+            IdDonor = idDonor;
+        }
     }
 }

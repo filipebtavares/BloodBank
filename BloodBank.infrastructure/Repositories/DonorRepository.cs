@@ -29,7 +29,7 @@ namespace BloodBank.infrastructure.Repositories
             return await _context.Donors.SingleOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<List<Donor>> GetDonors(string search)
+        public async Task<List<Donor>> GetDonors()
         {
             var donors = await  _context.Donors
                 .Include(p => p.Address)

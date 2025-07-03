@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBank.Application.Validation
 {
-    internal class CreateDonationValidation
+    public class CreateAddressCommandValidation
     {
     }
 }

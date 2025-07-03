@@ -36,11 +36,6 @@ namespace BloodBank.infrastructure.Repositories
             return donation;
         }
 
-        public async Task<Donation?> GetDonationById(int id)
-        {
-            return await _context.Donations.SingleOrDefaultAsync(p => p.Id == id);
-        }
-
         public async Task<int> PostDonation(Donation donation)
         {
             await _context.Donations.AddAsync(donation);

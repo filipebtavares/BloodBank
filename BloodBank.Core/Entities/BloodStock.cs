@@ -15,7 +15,7 @@ namespace BloodBank.Core.Entities
         public string RhFactor { get; private set; }
         public int QuantityML { get; private set; }
         public int IdDonation { get; private set; }
-        public Donation Donation { get; private set; }
+        public ICollection<Donation> Donations { get; private set; } = new List<Donation>();
         public bool  IsDeleted { get; private set; }
 
 
@@ -30,14 +30,13 @@ namespace BloodBank.Core.Entities
         }
 
 
-        public BloodStock(int id, string bloodType, string rhFactor, int quantityML, Donation donation, int idDonation)
+        public BloodStock(int id, string bloodType, string rhFactor, int quantityML,  int idDonation)
         {
             Id = id;
             BloodType = bloodType;
             RhFactor = rhFactor;
             QuantityML = quantityML;
             IdDonation = idDonation;
-            Donation = donation;
         }
 
         public void SetAsDeleted()

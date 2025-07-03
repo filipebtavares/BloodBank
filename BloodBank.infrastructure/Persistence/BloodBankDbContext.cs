@@ -38,10 +38,10 @@ namespace BloodBank.infrastructure.Persistence
             {
                 e.HasKey(k => k.Id);
 
-                e.HasMany(b => b.BloodStocks)
-                    .WithOne(d => d.Donation)
-                    .HasForeignKey(f => f.IdDonation)
-                    .OnDelete(DeleteBehavior.Restrict);
+                e.HasOne(p => p.BloodStock)
+               .WithMany(d => d.Donations)
+               .HasForeignKey(i => i.IdBloodStock)
+               .OnDelete(DeleteBehavior.Restrict);
             });
 
             builder.Entity<Address>(e =>

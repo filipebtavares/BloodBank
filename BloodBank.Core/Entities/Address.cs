@@ -12,6 +12,7 @@ namespace BloodBank.Core.Entities
         public string PublicPlace { get; private set; }
         public string City { get; private set; }
         public string State { get; private set; }
+        public string  District { get; private set; }
         public string Cep { get; private set; }
         public int IdDonor { get; private set; }
         public List<Donor> Donors { get; private set; }
@@ -26,7 +27,7 @@ namespace BloodBank.Core.Entities
             IsDeleted = false;
         }
 
-        public Address(int id, string publicPlace, string city, string state, string cep, int idDonor)
+        public Address(int id, string publicPlace, string city, string state, string cep, int idDonor, string district)
         {
             Id = id;
             PublicPlace = publicPlace;
@@ -34,7 +35,7 @@ namespace BloodBank.Core.Entities
             State = state;
             Cep = cep;
             IdDonor = idDonor;
-
+            District = district;
             Donors = [];
         }
 

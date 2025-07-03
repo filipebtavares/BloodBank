@@ -12,13 +12,14 @@ namespace BloodBank.infrastructure.ExternalService.ViaCep
         {
             _client = new RestClient("https://viacep.com.br/ws/");
         }
-        public async Task<AddressViewModel> GetCep(string cep)
+
+        public async Task<ViaCepViewModel> GetAddressByCepAsync(string cep)
         {
-            var request = new RestRequest($"{cep}/json", Method.Get);
-            var response = await _client.ExecuteAsync<AddressViewModel>(request);
+            var request = new RestRequest($"{cep}/json/", Method.Get);
+            var response = await _client.ExecuteAsync<ViaCepViewModel>(request);
 
             if (!response.IsSuccessful || response.Data == null)
-                throw new Exception("Error to consult CEP");
+                throw new Exception("Erro ao consultar o ViaCEP.");
 
             return response.Data;
         }

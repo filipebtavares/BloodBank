@@ -9,7 +9,7 @@ namespace BloodBank.Core.Respositories
 {
     public interface IDonorRespository
     {
-        Task<List<Donor>> GetDonors(string search);
+        Task<List<Donor>> GetDonors();
         Task<Donor> GetDonorById(int id);
         Task<int> PostDonor(Donor donor);
         Task UpdateDonor(Donor donor);
