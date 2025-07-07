@@ -2,11 +2,7 @@
 using BloodBank.Core.Respositories;
 using BloodBank.infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+ 
 
 namespace BloodBank.infrastructure.Repositories
 {
@@ -30,10 +26,16 @@ namespace BloodBank.infrastructure.Repositories
         {
             var donation = await _context.Donations
                 .Include(p => p.Donor)
-                .Include(p => p.BloodStocks)
+                .Include(p => p.BloodStock)
                 .ToListAsync();
 
             return donation;
+        }
+
+        public async Task<Donation> GetDonationById(int id)
+        {
+           return await _context.Donations.SingleOrDefaultAsync(p => p.Id == id);
+
         }
 
         public async Task<int> PostDonation(Donation donation)

@@ -27,11 +27,17 @@ namespace BloodBank.infrastructure.Persistence
             {
                 e.HasKey(k => k.Id);
 
+                e.HasOne(d => d.Address)
+                    .WithOne()
+                    .HasForeignKey<Donor>("IdAddress") 
+                    .OnDelete(DeleteBehavior.Restrict);
+
                 e.HasMany(d => d.Donations)
                     .WithOne(w => w.Donor)
                     .HasForeignKey(f => f.IdDonor)
-                    .OnDelete(DeleteBehavior.Restrict);           
+                    .OnDelete(DeleteBehavior.Restrict);
             });
+
 
 
             builder.Entity<Donation>(e =>
@@ -44,15 +50,6 @@ namespace BloodBank.infrastructure.Persistence
                .OnDelete(DeleteBehavior.Restrict);
             });
 
-            builder.Entity<Address>(e =>
-            {
-                e.HasKey(k => k.Id);
-
-                e.HasMany(o => o.Donors)
-                    .WithOne(w => w.Address)
-                    .HasForeignKey(i => i.IdAddress)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
 
             base.OnModelCreating(builder);
         }

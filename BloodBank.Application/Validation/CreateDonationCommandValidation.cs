@@ -12,7 +12,10 @@ namespace BloodBank.Application.Validation
     {
         public CreateDonationCommandValidation()
         {
-            
+            RuleFor(donation => donation.QuantityMl)
+                .GreaterThanOrEqualTo(1)
+                .LessThanOrEqualTo(450)
+                .WithMessage("The donation cannot be less than 1ml nor greater than 450ml.");
         }
     }
 }

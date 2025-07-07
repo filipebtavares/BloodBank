@@ -11,6 +11,7 @@ namespace BloodBank.Core.Respositories
     {
         Task<List<Donation>> GetDonation();
         Task<int> PostDonation(Donation donation);
+        Task<Donation> GetDonationById(int id);
         Task AsDeleted(Donation donation);
     }
 }

@@ -5,6 +5,6 @@ namespace BloodBank.Application.Service
 {
     public  interface ICepService
     {
-        Task<ViaCepViewModel> GetCep(string cep);
+        Task<ViaCepViewModel> GetAddressByCepAsync(string cep);
     }
 }

@@ -21,7 +21,7 @@ namespace BloodBank.Application.Queries.GetAddressByCep
 
         public async Task<ResultViewModel<ViaCepViewModel>> Handle(GetAddressByCepQuery request, CancellationToken cancellationToken)
         {
-            var viaCep = await _service.GetCep(request.Cep);
+            var viaCep = await _service.GetAddressByCepAsync(request.Cep);
 
             if(viaCep is null)
             {

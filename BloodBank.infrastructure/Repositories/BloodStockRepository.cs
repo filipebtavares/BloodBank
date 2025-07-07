@@ -26,6 +26,15 @@ namespace BloodBank.infrastructure.Repositories
             return await _context.BloodStocks.SingleOrDefaultAsync(p => p.Id == id);
         }
 
+        public async Task<BloodStock?> GetByTypeAndRhAsync(string bloodType, string rhFactor)
+        {
+            return await _context.BloodStocks
+            .FirstOrDefaultAsync(bs =>
+                bs.BloodType == bloodType &&
+                bs.RhFactor == rhFactor &&
+                bs.IsDeleted == false);
+        }
+
         public async Task<int> PostBloodStock(BloodStock bloodStock)
         {
             await _context.BloodStocks.AddAsync(bloodStock);

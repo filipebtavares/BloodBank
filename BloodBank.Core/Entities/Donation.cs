@@ -21,9 +21,13 @@ namespace BloodBank.Core.Entities
         public DonationsStatus Status { get; private set; }
         public bool  IsDeleted { get; private set; }
 
-        public Donation(int quantityMl)
+        public Donation(int quantityMl, int idBloodStock, int idDonor)
         {
+            IdDonor = idDonor;
             QuantityMl = quantityMl;
+            IdBloodStock = idBloodStock;
+            Status = DonationsStatus.Initial;
+            DonationDate = DateTime.Now;
             IsDeleted = false;
         }
 

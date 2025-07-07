@@ -13,5 +13,7 @@ namespace BloodBank.Core.Respositories
         Task<int> PostBloodStock(BloodStock bloodStock);
         Task UpdateBloodStock(BloodStock bloodStock);
         Task<bool> BloodStockExists(int id);
+        Task<BloodStock?> GetByTypeAndRhAsync(string bloodType, string rhFactor);
+
     }
 }

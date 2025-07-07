@@ -12,7 +12,7 @@ namespace BloodBank.Application.Queries.GetDonorById
 
         public GetDonorsByIdHandler(IDonorRespository repository)
         {
-            
+            _repository = repository;
         }
         public async Task<ResultViewModel<DonorViewModel>> Handle(GetDonorsByIdQuery request, CancellationToken cancellation)
         {

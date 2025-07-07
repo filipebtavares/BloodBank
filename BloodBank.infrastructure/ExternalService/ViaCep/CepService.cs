@@ -23,5 +23,7 @@ namespace BloodBank.infrastructure.ExternalService.ViaCep
 
             return response.Data;
         }
+
+       
     }
 }

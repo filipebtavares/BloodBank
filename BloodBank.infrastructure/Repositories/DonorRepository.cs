@@ -2,11 +2,6 @@
 using BloodBank.Core.Respositories;
 using BloodBank.infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BloodBank.infrastructure.Repositories
 {
@@ -41,8 +36,8 @@ namespace BloodBank.infrastructure.Repositories
 
         public async Task<int> PostDonor(Donor donor)
         {
-            await _context.Donors.AddAsync(donor);
-           await  _context.SaveChangesAsync();
+            await  _context.Donors.AddAsync(donor);
+            await  _context.SaveChangesAsync();
 
             return donor.Id;
         }

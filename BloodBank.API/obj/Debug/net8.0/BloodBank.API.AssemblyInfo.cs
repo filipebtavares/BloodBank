@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("b780db84-4dec-433a-984c-b7a29e429eac")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bd59b2db795651b3dd60bd435fe4374f8c211c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca75ab52c68898a9443fc2724aefcc21531ef9d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BloodBank.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

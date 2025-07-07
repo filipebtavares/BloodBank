@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace BloodBank.Core.Entities
 {
@@ -14,7 +10,6 @@ namespace BloodBank.Core.Entities
         public DateTime BirthDate { get; private set; }
         public string Genre { get; private set; }
         public double Weight { get; private set; }
-        public int IdAddress { get; private set; }
         public string  BloodType { get; private set; }
         public string RhFactor { get; private set; }
         public List<Donation> Donations { get; private set; }
@@ -22,9 +17,12 @@ namespace BloodBank.Core.Entities
         public bool  IsDeleted { get; private set; }
 
 
-
+        public Donor()
+        {
+            
+        }
         public Donor(int id, string fullName, string email, DateTime birthDate, string genre, 
-            double weight, string bloodType, string rhFactor,Address address, int idAddress)
+            double weight, string bloodType, Address address)
         {
             Id = id;
             FullName = fullName;
@@ -33,22 +31,22 @@ namespace BloodBank.Core.Entities
             Genre = genre;
             Weight = weight;
             BloodType = bloodType;
-            RhFactor = rhFactor;
             Address = address;
-            IdAddress = idAddress;
             Donations = [];
         }
 
         public Donor(string fullName, string genre, string email, DateTime birthDate, 
-            string bloodType, double weight)
+            string bloodType, double weight, string rhFactor, Address address)
         {
             FullName = fullName;
             Genre = genre;
             Email = email;
             BirthDate = birthDate;
             BloodType = bloodType;
+            RhFactor = rhFactor;
             Weight = weight;
             IsDeleted = false;
+            Address = address;
         }
 
         public void SetAsDeleted()

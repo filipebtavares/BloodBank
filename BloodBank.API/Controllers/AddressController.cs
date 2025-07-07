@@ -1,5 +1,4 @@
-﻿using BloodBank.Application.Commands.InsertAddress;
-using BloodBank.Application.Commands.UpdateAddress;
+﻿
 using BloodBank.Application.Queries.GetAddress;
 using BloodBank.Application.Queries.GetAddressByCep;
 using BloodBank.Application.Queries.GetAddressById;
@@ -28,7 +27,7 @@ namespace BloodBank.API.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<IActionResult> GetAddressById(int id)
         {
             var query = await _mediator.Send(new GetAddressByIdQuery(id));
@@ -42,7 +41,7 @@ namespace BloodBank.API.Controllers
 
         }
 
-        [HttpGet("{cep}")]
+        [HttpGet("cep/{cep}")]
         public async Task<IActionResult> GetAddressByCep(string cep)
         {
             var query = await _mediator.Send(new GetAddressByCepQuery(cep));
@@ -54,27 +53,5 @@ namespace BloodBank.API.Controllers
 
             return Ok(query);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> PostAddress(CreateAddressCommand command)
-        {
-            var query = await _mediator.Send(command);
-
-            return CreatedAtAction(nameof(GetAddressById), new { id = query.Data }, query);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAddress(int id, UpdateAddressCommand command)
-        {
-            var query = await _mediator.Send(command);
-
-            if (!query.IsSucess)
-            {
-                return BadRequest(query.Message);
-            }
-
-            return Ok(query);
-        }
-
     }
 }
